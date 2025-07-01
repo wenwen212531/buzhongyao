@@ -1,0 +1,15 @@
+import torch
+# 初始化权重和输入
+w1, w2, w3, w4, w5, w6, w7, w8 = 0.2, -0.4, 0.5, 0.6, 0.1, -0.5, -0.3, 0.8
+x1, x2 = 0.2, 0.3
+x = torch.tensor([[x1, x2]])
+
+# 隐藏层计算，使用torch的sigmoid激活函数
+h1 = torch.sigmoid(w1 * x[:, 0] + w2 * x[:, 1])
+h2 = torch.sigmoid(w3 * x[:, 0] + w4 * x[:, 1])
+
+# 输出层计算
+o1 = w5 * h1 + w6 * h2
+o2 = w7 * h1 + w8 * h2
+
+print(f"输入值: x1, x2: {x}")
